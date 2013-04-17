@@ -1,0 +1,83 @@
+<section class="innerPanel">
+    <section id="innerPanelApplicationLog">
+        <h1><?= $this->translate( 'admin.dashboard.applicationLog.title', 'admin' ) ?></h1>
+        <table class="innerPanelContent">
+            <thead>
+                <tr>
+                    <th>
+<?php $priority = $this->translate( 'applicationLog.list.column.priority.title', 'applicationLog' ) ?>
+                        <abbr title="<?= $priority ?>"><?= mb_substr( $priority, 0, 1 ) ?></abbr>
+                    </th>
+                    <th>
+                        <?= $this->translate(
+                            'applicationLog.list.column.eventType.title',
+                            'applicationLog'
+                        ) ?>
+
+                    </th>
+                    <th>
+                        <?= $this->translate(
+                            'applicationLog.list.column.loggedUserName.title',
+                            'applicationLog'
+                        ) ?>
+
+                    </th>
+                    <th>
+                        <?= $this->translate(
+                            'applicationLog.list.column.timestamp.title',
+                            'applicationLog'
+                        ) ?>
+
+                    </th>
+                    <th>
+                        <?= $this->translate(
+                            'applicationLog.list.column.extra.title',
+                            'applicationLog'
+                        ) ?>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+<?php foreach ( $this->logEvents as $log ): ?>
+
+                <tr id="innerPanelApplicationLog<?= $log->id ?>">
+                    <th class="priority" title="<?= $this->translate( 'applicationLog.priority.' . $log->priority, 'applicationLog' ) ?>">
+                        <img alt="<?= $this->translate( 'applicationLog.priority.' . $log->priority, 'applicationLog' ) ?>"
+                             src="/images/modules/ApplicationLog/priority/<?= $log->priority ?>.png"
+                             style="vertical-align: middle;" />
+                    </th>
+                    <td class="eventType">
+                        <?= $this->translate( 'applicationLog.eventType.' . $log->eventType, 'applicationLog' ) ?>
+
+                    </td>
+                    <td class="user">
+                        <?php if ( $log->loggedUserId ): ?>
+                        <a href="/app/<?= $this->adminLocale() ?>/user/view/<?=
+                            $this->escapeHtmlAttr( rawurlencode( $log->getOption( 'loggedUserName' ) ) )
+                            ?>"><?= $log->getOption( 'loggedUserName' ) ?></a>
+                        <?php else: ?>
+                            <i><?= $this->translate( 'applicationLog.anonymous', 'applicationLog' ) ?></i>
+                        <?php endif ?>
+
+                    </td>
+                    <td class="timestamp" title="<?= $this->dateTime( $log->timestamp ) ?>">
+                        <?= $this->relativeTime( $log->timestamp ) ?>
+
+                    </td>
+                    <td class="extra">
+                        <?= $log->render( $this ) ?>
+
+                    </td>
+                </tr>
+<?php endforeach ?>
+
+            </tbody>
+        </table>
+        <div class="more-links">
+            <a href="/app/<?= $this->locale() ?>/admin/application-log" class="button-appearance">
+                <?= $this->translate( 'admin.dashboard.applicationLog.more', 'admin' ) ?>
+            </a>
+        </div>
+    </section>
+</section>

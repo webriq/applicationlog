@@ -1,3 +1,8 @@
+-- insert default values for table: module
+
+INSERT INTO "module" ( "module", "enabled" )
+     VALUES ( 'Grid\ApplicationLog', TRUE );
+
 -- insert default values for table: user_right
 
 DO LANGUAGE plpgsql $$

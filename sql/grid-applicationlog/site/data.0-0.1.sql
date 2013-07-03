@@ -22,4 +22,4 @@ BEGIN
 END $$;
 
 INSERT INTO "user_right" ( "label", "group", "resource", "privilege", "optional" )
-     VALUES ( NULL, 'user.extra', '"applicationLog"', 'view', TRUE );
+     VALUES ( NULL, 'user.extra', 'applicationLog', 'view', TRUE );

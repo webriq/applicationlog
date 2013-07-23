@@ -17,6 +17,8 @@ CREATE TABLE "application_log"
       ON DELETE SET NULL
 );
 
+CREATE INDEX ON "application_log" ( "timestamp" DESC );
+
 --------------------------------------------------------------------------------
 -- table: application_log_property                                            --
 --------------------------------------------------------------------------------
@@ -27,6 +29,7 @@ CREATE TABLE "application_log_property"
     "name"      CHARACTER VARYING   NOT NULL,
     "value"     TEXT,
 
+    PRIMARY KEY ( "logId", "name" ),
     FOREIGN KEY ( "logId" )
      REFERENCES "application_log" ( "id" )
       ON UPDATE CASCADE

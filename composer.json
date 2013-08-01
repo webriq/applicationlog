@@ -1,7 +1,7 @@
 {
-    "name": "webriq/gridguyz-applicationlog",
+    "name": "gridguyz/applicationlog",
     "type": "gridguyz-module",
-    "description": "ApplicationLog module for Gridguyz",
+    "description": "ApplicationLog module for Gridguyz CMS",
     "license": "CC-BY-SA-3.0",
     "keywords": [
         "gridguyz",
@@ -30,8 +30,8 @@
     },
     "require": {
         "php": ">=5.4",
-        "webriq/gridguyz-installer": "*",
-        "webriq/gridguyz-core": "*"
+        "gridguyz/module-installer": "*",
+        "gridguyz/core": "*"
     },
     "autoload": {
         "psr-0": {

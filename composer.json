@@ -40,5 +40,10 @@
         "classmap": [
             "Module.php"
         ]
+    },
+    "extra": {
+        "modules": {
+            "Grid\\ApplicationLog": "Application log"
+        }
     }
 }

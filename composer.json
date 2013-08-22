@@ -46,7 +46,7 @@
             "en": "Activity Log"
         },
         "display-description": {
-            "en": "So your website is ready to receive tons of visitors, eh? That's a game with several players, right? Wouldn't it be nice to see who does what on your pages? Of course, we have a smart and simple function for you that monitors and logs for you activities like content view, successful or unsuccessful sign in events, etc.\nWe keep these activities in the logs for you for a period of 30 days, the older events are automatically erased wen new activities occur.\nThe activity log is reachable through the \"Dashboard\" interface of your website."
+            "en": "So your website is ready to receive tons of visitors, eh? That's a game with several players, right? Wouldn't it be nice to see who does what on your pages? Of course, we have a smart and simple function for you that monitors and logs for you activities like content view, successful or unsuccessful sign in events, etc.\n\nWe keep these activities in the logs for you for a period of 30 days, the older events are automatically erased wen new activities occur.\nThe activity log is reachable through the \"Dashboard\" interface of your website."
         },
         "modules": {
             "Grid\\ApplicationLog": "Application log"

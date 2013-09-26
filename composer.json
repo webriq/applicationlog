@@ -42,6 +42,9 @@
         ]
     },
     "extra": {
+        "display-icon": {
+            "63": "https://raw.github.com/gridguyz/applicationlog/%reference%/icons/63x63.png"
+        },
         "display-name": {
             "en": "Activity Log"
         },

@@ -6,6 +6,7 @@ use Zork\Model\ModelAwareTrait;
 use Zork\Model\ModelAwareInterface;
 use Zend\Log\Writer\AbstractWriter;
 use Zend\Authentication\AuthenticationService;
+use Zork\Authentication\AuthenticationServiceAwareTrait;
 
 /**
  * Writer
@@ -15,16 +16,19 @@ use Zend\Authentication\AuthenticationService;
 class Writer extends AbstractWriter implements ModelAwareInterface
 {
 
-    use ModelAwareTrait;
+    use ModelAwareTrait,
+        AuthenticationServiceAwareTrait;
 
     /**
      * Constructor
      *
      * @param \ApplicationLog\Model\Log\Model $applicationLogModel
      */
-    public function __construct( Model $applicationLogModel )
+    public function __construct( Model                  $applicationLogModel,
+                                 AuthenticationService  $authenticationService )
     {
-        $this->setModel( $applicationLogModel );
+        $this->setModel( $applicationLogModel )
+             ->setAuthenticationService( $authenticationService );
     }
 
     /**
@@ -35,7 +39,7 @@ class Writer extends AbstractWriter implements ModelAwareInterface
      */
     protected function doWrite( array $event )
     {
-        $auth           = new AuthenticationService;
+        $auth           = $this->getAuthenticationService();
         $event['extra'] = empty( $event['extra'] )
                         ? array()
                         : (array) $event['extra'];

@@ -8,5 +8,8 @@ return array (
   'applicationLog.list.column.loggedUserName.title' => 'Felhasználónév',
   'applicationLog.list.column.priority.title' => 'Prioritás',
   'applicationLog.list.column.timestamp.title' => 'Időbélyeg',
+  'applicationLog.priority.0' => 'Vészhelyzet',
+  'applicationLog.priority.1' => 'Figyelmeztetés',
+  'applicationLog.priority.2' => 'Kritikus',
   'applicationLog.priority.3' => 'Hiba',
 );

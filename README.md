@@ -2,7 +2,7 @@ ApplicationLog module for WebriQ CMS
 ====================================
 
 ApplicationLog module produces common WebriQ CMS actions to be logged & stored.
-You can seacrh this log too.
+You can search this log too.
 
 License
 -------
